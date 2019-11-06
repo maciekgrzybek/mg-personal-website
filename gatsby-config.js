@@ -35,21 +35,8 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
-    {
-      resolve: 'gatsby-plugin-tinacms',
-      options: {
-        plugins: [
-          "gatsby-tinacms-git",
-          "gatsby-tinacms-remark",
-        ],
-        sidebar: {
-          hidden: process.env.NODE_ENV === 'production',
-          position: 'displace',
-        },
-      },
-    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
