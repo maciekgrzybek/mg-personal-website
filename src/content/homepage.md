@@ -1,5 +1,5 @@
 ---
-title: yo madafakaSSS
+title: Hello title
 path: homepage
 ---
 
