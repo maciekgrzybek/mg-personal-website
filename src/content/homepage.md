@@ -1,5 +1,5 @@
 ---
-title: Hello title test
+title: Maciek grzybek
 path: homepage
 ---
 
