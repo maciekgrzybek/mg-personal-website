@@ -35,6 +35,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    `gatsby-plugin-postcss`,
     {
       resolve: 'gatsby-plugin-tinacms',
       options: {
