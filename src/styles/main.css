@@ -1,5 +1,8 @@
 @tailwind base;
 
+html {
+  overflow: hidden;
+}
 h1 {
   @apply font-bold text-4xl mb-8;
 }
