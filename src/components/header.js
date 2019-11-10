@@ -5,7 +5,7 @@ import Logo from './Logo';
 import Icon from './Icon';
 
 const Header = () => (
-  <header className="flex p-3">
+  <header className="flex p-4 mb-4">
     <div className="w-2/4">
       <Logo />
     </div>

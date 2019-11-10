@@ -32,7 +32,12 @@ const ArticlesFeed = () => {
     });
   };
 
-  return <div>{renderArticles()}</div>;
+  return (
+    <div>
+      <h2>Articles</h2>
+      {renderArticles()}
+    </div>
+  );
 };
 
 export default ArticlesFeed;

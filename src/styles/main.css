@@ -1,5 +1,15 @@
 @tailwind base;
 
+h1 {
+  @apply font-bold text-4xl mb-8;
+}
+h1 span {
+  @apply font-normal text-2xl;
+}
+h2 {
+  @apply font-bold text-3xl mb-6;
+}
+
 @tailwind components;
 
 @tailwind utilities;

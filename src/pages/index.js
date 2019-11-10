@@ -12,8 +12,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
-      <div className="relative max-w-3/4 mx-auto mb-12 mt-6">
+      <div
+        className="mb-12"
+        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+      />
+      <div className="relative max-w-3/4 mx-auto mb-16 mt-6">
         <Img className="absolute z-10" fluid={portraitImageFluid} />
         <div className="bg-blue-500 absolute w-full h-full top-1 left-1 z-0"></div>
       </div>
