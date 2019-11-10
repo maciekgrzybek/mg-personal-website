@@ -10,7 +10,7 @@ const ArticleSnippet = ({ data }) => {
       <h4 className="text-sm mb-2">
         {frontmatter.date} / Reading time ~{timeToRead}min
       </h4>
-      <h3 className="text-xl font-bold mb-4">{frontmatter.title}</h3>
+      <h3 className="text-2xl font-bold mb-4">{frontmatter.title}</h3>
       <div className="mb-8">
         <p>{frontmatter.description}</p>
       </div>
