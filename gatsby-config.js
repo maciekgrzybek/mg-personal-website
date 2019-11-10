@@ -34,16 +34,27 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 1400,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-postcss`,
     {
-      resolve: 'gatsby-plugin-tinacms',
+      resolve: `gatsby-plugin-typography`,
       options: {
-        plugins: ['gatsby-tinacms-git', 'gatsby-tinacms-remark'],
-        sidebar: {
-          hidden: process.env.NODE_ENV === 'production',
-          position: 'displace',
-        },
+        pathToConfigModule: `src/utils/typography`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

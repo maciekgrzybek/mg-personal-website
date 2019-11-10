@@ -1,34 +1,25 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { remarkForm } from 'gatsby-tinacms-remark';
+import Img from 'gatsby-image';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import ArticlesFeed from '../components/ArticlesFeed';
 
 const IndexPage = ({ data }) => {
+  const portraitImageFluid =
+    data.markdownRemark.frontmatter.portraitPhoto.childImageSharp.fluid;
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>{data.markdownRemark.frontmatter.title} - hello</h1>
       <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
+      <div className="relative max-w-3/4 mx-auto mb-12 mt-6">
+        <Img className="absolute z-10" fluid={portraitImageFluid} />
+        <div className="bg-blue-500 absolute w-full h-full top-1 left-1 z-0"></div>
+      </div>
+      <ArticlesFeed />
     </Layout>
   );
-};
-
-const homePageForm = {
-  fields: [
-    {
-      label: 'Title',
-      name: 'rawFrontmatter.title',
-      description: 'Enter the title of the page here',
-      component: 'text',
-    },
-    {
-      label: 'Body',
-      name: 'rawMarkdownBody',
-      component: 'markdown',
-    },
-  ],
 };
 
 export const homepageQuery = graphql`
@@ -36,15 +27,18 @@ export const homepageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: "homepage" } }) {
       frontmatter {
         title
-        path
+        portraitPhoto {
+          id
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       html
-      fileRelativePath
-      rawMarkdownBody
-      rawFrontmatter
-      id
     }
   }
 `;
 
-export default remarkForm(IndexPage, homePageForm);
+export default IndexPage;
